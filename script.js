@@ -1,10 +1,14 @@
-// Cursor following effect
-const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    
-});
+// Cursor following effect — desktop only
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    const cursor = document.querySelector('.cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        if (!cursor) return;
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+}
+
 
 // Typing effect for greeting
 const greetingText = "Hey You Know What! You're the most adorable alien i ever met! My Love 💖";

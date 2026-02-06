@@ -78,9 +78,14 @@ h2 {
 
 .reason-text {
     font-size: 1.2rem;
+    
     margin-bottom: 1rem;
     position: relative;
     z-index: 2;
+
+    background: rgba(255, 182, 193, 0.25);
+    padding: 1rem;
+    border-radius: 12px;
 }
 
 .gif-overlay {
@@ -93,13 +98,13 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s;
     z-index: 1;
 }
 
 .reason-card:hover .gif-overlay {
-    opacity: 1;
+    opacity: 0;
 }
 
 .shuffle-button {
@@ -200,4 +205,14 @@ h2 {
     color: #ff69b4;
     margin-top: 1rem;
     opacity: 0.7;
+}
+
+@media (hover: none), (pointer: coarse) {
+    * {
+        cursor: auto !important;
+    }
+
+    .custom-cursor {
+        display: none !important;
+    }
 }

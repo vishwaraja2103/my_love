@@ -146,3 +146,15 @@ document.addEventListener('mousemove', (e) => {
 
 // Create initial floating elements
 setInterval(createFloatingElement, 2000);
+
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    const cursor = document.querySelector('.custom-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+        gsap.to(cursor, {
+            x: e.clientX - 15,
+            y: e.clientY - 15,
+            duration: 0.2
+        });
+    });
+}
